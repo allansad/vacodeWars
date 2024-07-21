@@ -4,6 +4,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const flash = require("connect-flash");
+const MongoStore = require("connect-mongo");
 
 const passport = require("./controllers/passport.controller");
 const index = require("./routes/index");
@@ -22,6 +23,7 @@ app.use(session({
   secret: process.env.SESSION_KEY,
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({ mongoUrl: process.env.DATABASE }),
 }));
 app.use(passport.initialize());
 app.use(passport.session());
