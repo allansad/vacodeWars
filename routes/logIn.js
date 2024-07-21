@@ -19,7 +19,7 @@ router.get("/", validateSessionAndRedirect, (req, res, next) => {
       message.error = ["로그인 후 이용하세요."];
     }
 
-    res.render("login", { message: message.error });
+    res.render("logIn", { message: message.error });
   }
   catch (error) {
     next(error);
