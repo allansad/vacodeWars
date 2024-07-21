@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Codewars</title>
+</head>
+
+<body>
+  <h1>Codewars</h1>
+  <h2>코딩 전쟁이 일어난다. 모든 대원들, 전투 준비!</h2>
+  <ul class="list">
+    <li>Level 1</li>
+    <ul class="level1">
+      <% for (const problem of problems) { if (problem.difficulty_level === 1) { %>
+        <li onclick="location.href=`/problems/<%= problem._id %>`">
+          <div>제목: <%= problem.title %>
+          </div>
+          <div>정답자: <%= problem.completed_users %>
+          </div>
+          <div>난이도: <%= problem.difficulty_level %>
+          </div>
+        </li>
+        <% } %>
+      <% } %>
+    </ul>
+    <li>Level 2</li>
+    <ul class="level2">
+      <% for (const problem of problems) { if (problem.difficulty_level === 2) { %>
+        <li onclick="location.href=`/problems/<%= problem._id %>`">
+          <div>제목: <%= problem.title %>
+          </div>
+          <div>정답자: <%= problem.completed_users %>
+          </div>
+          <div>난이도: <%= problem.difficulty_level %>
+          </div>
+        </li>
+        <% } %>
+      <% } %>
+    </ul>
+    <li>Level 3</li>
+    <ul class="level3">
+      <% for (const problem of problems) { if (problem.difficulty_level === 3) { %>
+        <li onclick="location.href=`/problems/<%= problem._id %>`">
+          <div>제목: <%= problem.title %>
+          </div>
+          <div>정답자: <%= problem.completed_users %>
+          </div>
+          <div>난이도: <%= problem.difficulty_level %>
+          </div>
+        </li>
+        <% } %>
+      <% } %>
+    </ul>
+  </ul>
+</body>
+
+</html>

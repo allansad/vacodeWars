@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codewars</title>
+  
+</head>
+
+<body>
+  <form method="post">
+    <p>사용자 이름</p>
+    <input id="usernameInput" name="username"></input>
+    <p>비밀번호</p>
+    <input id="passwordInput" autocomplete="false" type="password" name="password"></input>
+    <button id="loginButton" disabled>로그인</button>
+  </form>
+  <span><%= message %></span>
+  <button onclick="location.href='/signUp'">회원 가입</button>
+</body>
+<script>
+  const usernameInput = document.getElementById("usernameInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const loginButton = document.getElementById("loginButton");
+
+  function checkInputs() {
+    const usernameValue = usernameInput.value.trim();
+    const passwordValue = passwordInput.value.trim();
+
+    if (usernameValue !== "" && passwordValue !== "") {
+      loginButton.disabled = false;
+    } else {
+      loginButton.disabled = true;
+    }
+  }
+
+  usernameInput.addEventListener("input", checkInputs);
+  passwordInput.addEventListener("input", checkInputs);
+</script>
+
+</html>

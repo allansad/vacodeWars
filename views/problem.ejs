@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Codewars</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+</head>
+
+<body>
+  <div class="problem">
+    <h1>
+      <%= problem.title %>
+    </h1>
+    <p>정답자 수: <%= problem.completed_users %>
+    </p>
+    <p>난이도: <%= problem.difficulty_level %>
+    </p>
+    <p>설명: <%= problem.description %>
+    </p>
+  </div>
+  <div class="answer">
+    <form action="/problems/<%= problem._id %>" method="post">
+      <textarea id="code" name="code">
+const solution = function() {
+  // your code..
+}
+      </textarea>
+      <button>제출</button>
+    </form>
+  </div>
+  <div class="test">
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.1/mode/javascript/javascript.min.js"></script>
+<script>
+  const editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    lineNumbers: true,
+    mode: "javascript",
+    theme: "dracula",
+  });
+</script>
+
+</html>
